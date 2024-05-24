@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting", "lets.book.meeting\lets.book.meeting.csproj", "{CE00DB73-1F70-4B04-A8E1-0DB028C14E91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting.room.management.module", "lets.book.meeting.room.management.module\lets.book.meeting.room.management.module.csproj", "{73C80413-BD3E-41FB-9A78-75E6441D36B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "let.book.meeting.functions", "let.book.meeting.functions\let.book.meeting.functions.csproj", "{63106A9C-7332-4381-966A-2C24C61C6573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting.book.room.module", "lets.book.meeting.book.room.module\lets.book.meeting.book.room.module.csproj", "{61E5AC32-C4D4-44F6-B26D-8D606611DE39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting.notification.module", "lets.book.meeting.notification.module\lets.book.meeting.notification.module.csproj", "{2EA60265-A7C7-44D7-8591-676F276BB30E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE00DB73-1F70-4B04-A8E1-0DB028C14E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE00DB73-1F70-4B04-A8E1-0DB028C14E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE00DB73-1F70-4B04-A8E1-0DB028C14E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE00DB73-1F70-4B04-A8E1-0DB028C14E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C80413-BD3E-41FB-9A78-75E6441D36B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C80413-BD3E-41FB-9A78-75E6441D36B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C80413-BD3E-41FB-9A78-75E6441D36B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C80413-BD3E-41FB-9A78-75E6441D36B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63106A9C-7332-4381-966A-2C24C61C6573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63106A9C-7332-4381-966A-2C24C61C6573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63106A9C-7332-4381-966A-2C24C61C6573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63106A9C-7332-4381-966A-2C24C61C6573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61E5AC32-C4D4-44F6-B26D-8D606611DE39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E5AC32-C4D4-44F6-B26D-8D606611DE39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E5AC32-C4D4-44F6-B26D-8D606611DE39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E5AC32-C4D4-44F6-B26D-8D606611DE39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA60265-A7C7-44D7-8591-676F276BB30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA60265-A7C7-44D7-8591-676F276BB30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA60265-A7C7-44D7-8591-676F276BB30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA60265-A7C7-44D7-8591-676F276BB30E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9A1AE5D-5EF1-45CA-B816-E7792E25EE49}
+	EndGlobalSection
+EndGlobal

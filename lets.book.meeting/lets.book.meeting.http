@@ -1,0 +1,6 @@
+@lets.book.meeting_HostAddress = http://localhost:5226
+
+GET {{lets.book.meeting_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
