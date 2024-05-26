@@ -5,6 +5,6 @@ namespace meetspace.room.management.module.Application.Queries
 {
     public class GetRoomDetailsQuery: IRequest<RoomDetailsDTO>
     {
-        public Guid RoomId { get; set; }
+        public string RoomId { get; set; }
     }
 }

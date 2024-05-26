@@ -9,12 +9,12 @@ namespace meetspace.room.management.module.Configuration
 {
     public static class ServiceRegistration
     {
-        public static IServiceCollection AddRoomManagementDependencies(
+        public static IServiceCollection AddBookingRoomManagementDependencies(
         this IServiceCollection services)
         {
             services.AddScoped<ICosmosDBClientFactory, CosmosDBClientFactory>();
-            services.AddScoped<IRoomManagementRepository, RoomManagementRepository>();
-            services.AddScoped<IRoomManagementService, RoomManagementService>();
+            services.AddScoped<IRoomBookingManagementRepository, RoomBookingManagementRepository>();
+            services.AddScoped<IRoomBookingManagementService, RoomBookingManagementService>();
             services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             return services;
         }

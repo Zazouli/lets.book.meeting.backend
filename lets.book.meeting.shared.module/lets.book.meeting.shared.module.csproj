@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\CommandHandler\" />
+    <Folder Include="Application\Commands\" />
+    <Folder Include="Application\DTOs\" />
+    <Folder Include="Application\QueryHandlers\" />
+    <Folder Include="Application\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\lets.book.meeting.book.room.module\lets.book.meeting.book.room.module.csproj" />
+    <ProjectReference Include="..\lets.book.meeting.room.management.module\lets.book.meeting.room.management.module.csproj" />
+  </ItemGroup>
+
+</Project>

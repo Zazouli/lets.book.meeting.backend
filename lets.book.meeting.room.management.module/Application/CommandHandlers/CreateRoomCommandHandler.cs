@@ -14,7 +14,11 @@ namespace meetspace.room.management.module.Application.CommandHandlers
         }
         public async Task<bool> Handle(CreateRoomCommand request, CancellationToken cancellationToken)
         {
-            var room = new Room { Id = Guid.NewGuid().ToString(), Location = "Aarhus", Capacity = 5, Name = "Random" };
+            var room = new Room { Id = request.Id,
+                Description = request.Description,
+                Capacity = request.Capacity,
+                Name = request.RoomName,
+                Location = request.Location };
             // Add the room 
             var roomSaved = await _roomManagementRepository.CreateRoom(room);
             if (roomSaved != null)

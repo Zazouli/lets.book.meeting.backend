@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace meetspace.room.management.module.Core.Entities
+namespace meetspace.room.management.module.Application.Commands
 {
-    public enum Location
+    internal class UpdateBookingRoomCommand
     {
-        Aarhus = 1,
-        Copenhagen = 2,
     }
 }

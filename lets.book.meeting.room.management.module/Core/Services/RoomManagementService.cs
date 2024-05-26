@@ -1,6 +1,8 @@
-﻿using MediatR;
+﻿using lets.book.meeting.room.management.module.Application.Queries;
+using MediatR;
 using meetspace.room.management.module.Application.Commands;
 using meetspace.room.management.module.Application.DTOs;
+using meetspace.room.management.module.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +23,19 @@ namespace meetspace.room.management.module.Core.Services
         {
             var command = new CreateRoomCommand
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.NewGuid().ToString(),
                 RoomName = roomDetailsDTO.Name,
                 Capacity = roomDetailsDTO.Capacity,
+                Description = roomDetailsDTO.Description,
                 Location = roomDetailsDTO.Location,
             };
             return await _mediator.Send(command);
+        }
+
+        public async Task<List<Room>> GetAllRooms()
+        {
+            var query = new GetAllRoomsQuery();
+            return await _mediator.Send(query);
         }
     }
 }

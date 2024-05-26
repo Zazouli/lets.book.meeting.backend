@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace meetspace.room.management.module.Application.Queries
 {
-    public class GetRoomDetailsQuery: IRequest<RoomDetailsDTO>
+    public class GetBookingRoomDetailsQuery: IRequest<BookingRoomDetailsDTO>
     {
-        public Guid RoomId { get; set; }
+        public string Id { get; set; }
+        public string RoomId { get; set; }
+        public DateTimeOffset StartDate { get; set; }
+        public DateTimeOffset EndDate { get; set; }
     }
 }

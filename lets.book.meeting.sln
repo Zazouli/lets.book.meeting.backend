@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting", "lets.book.meeting\lets.book.meeting.csproj", "{CE00DB73-1F70-4B04-A8E1-0DB028C14E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lets.book.meeting", "lets.book.meeting\lets.book.meeting.csproj", "{CE00DB73-1F70-4B04-A8E1-0DB028C14E91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting.room.management.module", "lets.book.meeting.room.management.module\lets.book.meeting.room.management.module.csproj", "{73C80413-BD3E-41FB-9A78-75E6441D36B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lets.book.meeting.room.management.module", "lets.book.meeting.room.management.module\lets.book.meeting.room.management.module.csproj", "{73C80413-BD3E-41FB-9A78-75E6441D36B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "let.book.meeting.functions", "let.book.meeting.functions\let.book.meeting.functions.csproj", "{63106A9C-7332-4381-966A-2C24C61C6573}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "let.book.meeting.functions", "let.book.meeting.functions\let.book.meeting.functions.csproj", "{63106A9C-7332-4381-966A-2C24C61C6573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting.book.room.module", "lets.book.meeting.book.room.module\lets.book.meeting.book.room.module.csproj", "{61E5AC32-C4D4-44F6-B26D-8D606611DE39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lets.book.meeting.book.room.module", "lets.book.meeting.book.room.module\lets.book.meeting.book.room.module.csproj", "{61E5AC32-C4D4-44F6-B26D-8D606611DE39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting.notification.module", "lets.book.meeting.notification.module\lets.book.meeting.notification.module.csproj", "{2EA60265-A7C7-44D7-8591-676F276BB30E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lets.book.meeting.notification.module", "lets.book.meeting.notification.module\lets.book.meeting.notification.module.csproj", "{2EA60265-A7C7-44D7-8591-676F276BB30E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lets.book.meeting.shared.module", "lets.book.meeting.shared.module\lets.book.meeting.shared.module.csproj", "{120E7D3C-00BA-4910-81CE-C446F4C7A4BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2EA60265-A7C7-44D7-8591-676F276BB30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EA60265-A7C7-44D7-8591-676F276BB30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EA60265-A7C7-44D7-8591-676F276BB30E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{120E7D3C-00BA-4910-81CE-C446F4C7A4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{120E7D3C-00BA-4910-81CE-C446F4C7A4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{120E7D3C-00BA-4910-81CE-C446F4C7A4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{120E7D3C-00BA-4910-81CE-C446F4C7A4BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

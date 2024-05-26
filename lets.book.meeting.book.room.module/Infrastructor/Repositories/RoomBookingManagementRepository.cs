@@ -5,41 +5,35 @@ using Newtonsoft.Json;
 
 namespace meetspace.room.management.module.Infrastructor.Repositories
 {
-    public class RoomManagementRepository : IRoomManagementRepository
+    public class RoomBookingManagementRepository : IRoomBookingManagementRepository
     {
         private readonly ICosmosDBClientFactory _clientFactory;
 
-        public RoomManagementRepository(ICosmosDBClientFactory clientFactory)
+        public RoomBookingManagementRepository(ICosmosDBClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
         }
 
-        public async Task<Room> CreateRoom(Room room)
+        public async Task<BookingRoom> CreateBooking(BookingRoom bookingRoom)
         {
             var container = GetContainer();
-            var serialize = JsonConvert.SerializeObject(room);
-            return await container.CreateItemAsync(room, new PartitionKey(room.Id));
+            var serialize = JsonConvert.SerializeObject(bookingRoom);
+            return await container.CreateItemAsync(bookingRoom, new PartitionKey(bookingRoom.Id));
         }
 
-        public Room? GetById(string roomId)
+        public List<BookingRoom> GetBookedInNextTwoHours(DateTimeOffset dateNow)
         {
             var container = GetContainer();
-            return container.GetItemLinqQueryable<Room>(true)
-                .Where(room => room.Id == roomId)
-                .FirstOrDefault();
-        }
-
-        public List<Room> GetAll()
-        {
-            var container = GetContainer();
-            return container.GetItemLinqQueryable<Room>(true)
+            return container.GetItemLinqQueryable<BookingRoom>(true)
+                .Where(b => b.StartDate == dateNow &&
+                            b.EndDate == dateNow.AddHours(2))
                 .ToList();
         }
 
         private Container GetContainer()
         {
             var database = GetDataBase("lets_book_meeting");
-            return database.GetContainer("room_container");
+            return database.GetContainer("booking_room_container");
         }
 
         private Database GetDataBase(string databaseName)

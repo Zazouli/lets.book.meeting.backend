@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace meetspace.room.management.module.Application.DTOs
 {
-    public class RoomDetailsDTO
+    public class BookingRoomDetailsDTO
     {
         public string Id { get; set; }
-        public string Name { get; set; }
-        public string Location { get; set; }
-        public string Description { get; set; }
-        public int Capacity { get; set; }
+        public string RoomId { get; set; }
+        public string UserEmail { get; set; }
+        public DateTimeOffset StartDate { get; set; }
+        public DateTimeOffset EndDate { get; set; }
     }
 }

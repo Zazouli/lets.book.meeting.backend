@@ -32,7 +32,7 @@ namespace meetspace.room.management.module.Infrastructor.CosmosDB
                         {
                             ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
                         }),
-                        ConnectionMode = ConnectionMode.Gateway,
+                        ConnectionMode = ConnectionMode.Gateway,                        
                     };
 
                     _client = new(_config["CosmosDb:AccountConnectionString"]);

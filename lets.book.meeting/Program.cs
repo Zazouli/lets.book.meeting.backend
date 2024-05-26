@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols;
 using Microsoft.IdentityModel.Tokens;
 using meetspace.room.management.module.Configuration;
+using lets.book.meeting.shared.module.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,8 @@ var certificateDescription = CertificateDescription.FromPath(certificatePath, ce
 
 // AddDependencies
 builder.Services.AddRoomManagementDependencies();
+builder.Services.AddBookingRoomManagementDependencies();
+builder.Services.AddSharedDomainDependencies();
 
 // Add services to the container.
 

@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\lets.book.meeting.book.room.module\lets.book.meeting.book.room.module.csproj" />
     <ProjectReference Include="..\lets.book.meeting.room.management.module\lets.book.meeting.room.management.module.csproj" />
+    <ProjectReference Include="..\lets.book.meeting.shared.module\lets.book.meeting.shared.module.csproj" />
   </ItemGroup>
 
 </Project>

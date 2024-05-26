@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace meetspace.room.management.module.Application.QueryHandlers
 {
-    public class GetRoomDetailsQueryHandler : IRequestHandler<GetRoomDetailsQuery, RoomDetailsDTO>
+    public class GetBookingRoomDetailsQueryHandler : IRequestHandler<GetBookingRoomDetailsQuery, BookingRoomDetailsDTO>
     {
-        public GetRoomDetailsQueryHandler()
+        public GetBookingRoomDetailsQueryHandler()
         {
             
         }
-        public Task<RoomDetailsDTO> Handle(GetRoomDetailsQuery request, CancellationToken cancellationToken)
+        public Task<BookingRoomDetailsDTO> Handle(GetBookingRoomDetailsQuery request, CancellationToken cancellationToken)
         {
             // Get the room from the database
-            return Task.Run(() => new RoomDetailsDTO());
+            return Task.Run(() => new BookingRoomDetailsDTO());
         }
     }
 }

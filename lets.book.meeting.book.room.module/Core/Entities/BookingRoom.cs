@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace meetspace.room.management.module.Core.Entities
 {
-    public class Room
+    public class BookingRoom
     {
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
-        public string Name { get; set; }
-        public string Location { get; set; }
-        public int Capacity { get; set; }
+        public string RoomId { get; set; }
+        public string UserEmail { get; set; }
+        public DateTimeOffset StartDate { get; set; }
+        public DateTimeOffset EndDate { get; set; }
     }
 }

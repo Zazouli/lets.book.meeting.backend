@@ -11,8 +11,6 @@
     <Folder Include="Application\Commands\" />
     <Folder Include="Application\DTOs\" />
     <Folder Include="Application\Mappers\" />
-    <Folder Include="Application\QueryHandlers\" />
-    <Folder Include="Application\Queries\" />
     <Folder Include="Core\Entities\" />
     <Folder Include="Core\Interfaces\" />
     <Folder Include="Core\Services\" />
