@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lets.book.meeting.book.room.module.Application.Queries
+namespace lets.book.meeting.room.management.module.Application.Queries
 {
-    public sealed class GetBookingInNextTwoHours: IRequest<List<BookingRoom>>
+    public class GetRoomsByIdsQuery: IRequest<List<Room>>
     {
-        public DateTimeOffset DateNow { get; set; }
+        public List<string> RoomIds { get; set; }
     }
 }

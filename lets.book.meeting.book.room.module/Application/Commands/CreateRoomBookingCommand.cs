@@ -13,7 +13,7 @@ namespace lets.book.meeting.book.room.module.Application.Commands
         public string Id { get; set; }
         public string RoomId { get; set; }
         public string UserEmail { get; set; }
-        public DateTimeOffset StartDate { get; set; }
-        public DateTimeOffset EndDate { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

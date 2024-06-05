@@ -21,12 +21,24 @@ namespace meetspace.room.management.module.Infrastructor.Repositories
             return await container.CreateItemAsync(bookingRoom, new PartitionKey(bookingRoom.Id));
         }
 
-        public List<BookingRoom> GetBookedInNextTwoHours(DateTimeOffset dateNow)
+        public List<BookingRoom> GetBookedByMeetingDuration(DateTimeOffset dateNow, int meetingDuration)
         {
             var container = GetContainer();
             return container.GetItemLinqQueryable<BookingRoom>(true)
-                .Where(b => b.StartDate == dateNow &&
-                            b.EndDate == dateNow.AddHours(2))
+                .Where(b => (b.StartDate > dateNow &&
+                            b.StartDate < dateNow.AddHours(meetingDuration)) ||
+                            (b.EndDate < dateNow.AddHours(meetingDuration) &&
+                            b.EndDate > dateNow))
+                .ToList();
+        }
+
+        public List<BookingRoom> GetCurrentUserBooking(string userEmail, DateTime from)
+        {
+            var container = GetContainer();
+            from = DateTime.Now.AddHours(-1000);
+            return container.GetItemLinqQueryable<BookingRoom>(true)
+                .Where(b => b.UserEmail == userEmail &&
+                b.StartDate > from)
                 .ToList();
         }
 

@@ -5,7 +5,8 @@ namespace meetspace.room.management.module.Core.Services
 {
     public interface IRoomManagementService
     {
-        Task<bool> CreateRoom(RoomDetailsDTO roomDetailsDTO);
+        Task<RoomDetailsDTO> CreateRoom(RoomDetailsDTO roomDetailsDTO);
         Task<List<Room>> GetAllRooms();
+        Task<List<Room>> GetRoomsByIds(List<string> roomIds);
     }
 }

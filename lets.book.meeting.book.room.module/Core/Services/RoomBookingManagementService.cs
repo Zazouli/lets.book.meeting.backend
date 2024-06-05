@@ -34,13 +34,23 @@ namespace meetspace.room.management.module.Core.Services
             return await _mediator.Send(command);
         }
 
-        public async Task<List<BookingRoom>> GetBookedInTheNextTwoHours()
+        public async Task<List<BookingRoom>> GetBookedByMeetingDuration(DateTime date, int meetingDuration = 2)
         {
-            var request = new GetBookingInNextTwoHours
+            var request = new GetBookingByMeetingDurationQuery
             {
-                DateNow = DateTimeOffset.UtcNow
+                DateNow = date,
+                MeetingDuration = meetingDuration
             };
             return await _mediator.Send(request);
+        }
+
+        public async Task<List<BookingRoom>> GetCurrentUserBooking(string userEmail)
+        {
+            var request = new GetCurrentUserBookingQuery
+            {
+                UserEmail = userEmail
+            };
+            return await _mediator.Send(request);            
         }
     }
 }

@@ -16,7 +16,7 @@ namespace lets.book.meeting.shared.module.Configuration
         public static IServiceCollection AddSharedDomainDependencies(
         this IServiceCollection services)
         {
-            services.AddScoped<IAvailableRoomService, AvailableRoomService>();
+            services.AddScoped<ISharedService, SharedService>();
             services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             return services;
         }

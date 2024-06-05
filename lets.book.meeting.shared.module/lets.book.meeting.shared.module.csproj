@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Application\CommandHandler\" />
     <Folder Include="Application\Commands\" />
-    <Folder Include="Application\DTOs\" />
     <Folder Include="Application\QueryHandlers\" />
     <Folder Include="Application\Queries\" />
   </ItemGroup>

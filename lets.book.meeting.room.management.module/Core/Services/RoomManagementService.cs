@@ -19,22 +19,41 @@ namespace meetspace.room.management.module.Core.Services
             _mediator = mediator;
         }
 
-        public async Task<bool> CreateRoom(RoomDetailsDTO roomDetailsDTO)
+        public async Task<RoomDetailsDTO> CreateRoom(RoomDetailsDTO roomDetailsDTO)
         {
+            // the location will be taken from the admin location
             var command = new CreateRoomCommand
             {
                 Id = Guid.NewGuid().ToString(),
                 RoomName = roomDetailsDTO.Name,
                 Capacity = roomDetailsDTO.Capacity,
                 Description = roomDetailsDTO.Description,
-                Location = roomDetailsDTO.Location,
+                Location = "Aarhus",
             };
-            return await _mediator.Send(command);
+            var room =  await _mediator.Send(command);
+            return new RoomDetailsDTO
+            {
+                Id = room.Id,
+                Name = room.Name,
+                Capacity = roomDetailsDTO.Capacity,
+                Description = roomDetailsDTO.Description,
+                Location = room.Location
+            };
         }
 
         public async Task<List<Room>> GetAllRooms()
         {
             var query = new GetAllRoomsQuery();
+            return await _mediator.Send(query);
+        }
+
+        public async Task<List<Room>> GetRoomsByIds(List<string> roomIds)
+        {
+            var query = new GetRoomsByIdsQuery
+            {
+                RoomIds = roomIds
+            };
+
             return await _mediator.Send(query);
         }
     }

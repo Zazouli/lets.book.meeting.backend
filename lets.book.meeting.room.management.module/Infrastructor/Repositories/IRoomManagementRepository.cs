@@ -7,5 +7,6 @@ namespace meetspace.room.management.module.Infrastructor.Repositories
         Task<Room> CreateRoom(Room room);
         List<Room> GetAll();
         Room? GetById(string roomId);
+        List<Room> GetRoomsByIds(List<string> roomIds);
     }
 }

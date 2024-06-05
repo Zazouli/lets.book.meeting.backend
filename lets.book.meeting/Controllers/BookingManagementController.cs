@@ -38,7 +38,8 @@ namespace lets.book.meeting.Controllers
 
                 try
                 {
-                    await _roomBookingManagementService.CreateRoom(request, "oussamazazouli@outlook.com");
+                    var email = claims?.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
+                    await _roomBookingManagementService.CreateRoom(request, email);
                     return Ok();
                 }
                 catch (Exception)

@@ -10,18 +10,17 @@ using System.Threading.Tasks;
 
 namespace lets.book.meeting.book.room.module.Application.QueryHandlers
 {
-    internal class GetBookingInNextTwoHoursQueryHandler : IRequestHandler<GetBookingByMeetingDurationQuery, List<BookingRoom>>
+    public class GetCurrentUserBookingQueryHandler : IRequestHandler<GetCurrentUserBookingQuery, List<BookingRoom>>
     {
         private readonly IRoomBookingManagementRepository _roomBookingManagementRepository;
 
-        public GetBookingInNextTwoHoursQueryHandler(IRoomBookingManagementRepository roomBookingManagementRepository)
+        public GetCurrentUserBookingQueryHandler(IRoomBookingManagementRepository roomBookingManagementRepository)
         {
             _roomBookingManagementRepository = roomBookingManagementRepository;
         }
-
-        public Task<List<BookingRoom>> Handle(GetBookingByMeetingDurationQuery request, CancellationToken cancellationToken)
+        public async Task<List<BookingRoom>> Handle(GetCurrentUserBookingQuery request, CancellationToken cancellationToken)
         {
-            return Task.Run(() => _roomBookingManagementRepository.GetBookedByMeetingDuration(request.DateNow, request.MeetingDuration));
+            return await Task.Run(() => _roomBookingManagementRepository.GetCurrentUserBooking(request.UserEmail, DateTime.UtcNow.AddDays(-30)));
         }
     }
 }

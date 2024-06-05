@@ -36,6 +36,14 @@ namespace meetspace.room.management.module.Infrastructor.Repositories
                 .ToList();
         }
 
+        public List<Room> GetRoomsByIds(List<string> roomIds)
+        {
+            var container = GetContainer();
+            return container.GetItemLinqQueryable<Room>(true)
+                .Where(r => roomIds.Contains(r.Id))
+                .ToList();
+        }
+
         private Container GetContainer()
         {
             var database = GetDataBase("lets_book_meeting");

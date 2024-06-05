@@ -32,11 +32,11 @@ namespace lets.book.meeting.Controllers
         }
 
         // POST api/<RoomManagementController>
-        [HttpPost]
-        public void Post([FromBody] RoomDetailsDTO roomDetailsDTO)
+        [HttpPost("createroom")]
+        public async Task<ActionResult<RoomDetailsDTO>> Post([FromBody] RoomDetailsDTO roomDetailsDTO)
         {
             var claims = User?.Claims?.Select(c => new { c.Type, c.Value }).ToList();
-            _roomManagementService.CreateRoom(roomDetailsDTO);
+            return await _roomManagementService.CreateRoom(roomDetailsDTO);
         }
 
         // PUT api/<RoomManagementController>/5

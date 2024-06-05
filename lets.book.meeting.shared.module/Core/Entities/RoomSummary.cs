@@ -9,6 +9,7 @@ namespace lets.book.meeting.shared.module.Core.Entities
     public sealed class RoomSummary
     {
         public string RoomId { get; set; }
+        public string RoomDescription { get; set; }
         public string RoomName { get; set; }
         public string Location { get; set;}
     }

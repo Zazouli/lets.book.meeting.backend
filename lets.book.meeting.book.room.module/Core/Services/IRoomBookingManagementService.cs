@@ -6,6 +6,7 @@ namespace meetspace.room.management.module.Core.Services
     public interface IRoomBookingManagementService
     {
         Task<bool> CreateRoom(CreateBookingRequest createBookingRequest, string userEmail);
-        Task<List<BookingRoom>> GetBookedInTheNextTwoHours();
+        Task<List<BookingRoom>> GetBookedByMeetingDuration(DateTime date, int meetingDuration = 2);
+        Task<List<BookingRoom>> GetCurrentUserBooking(string userEmail);
     }
 }

@@ -5,14 +5,14 @@ using meetspace.room.management.module.Infrastructor.Repositories;
 
 namespace meetspace.room.management.module.Application.CommandHandlers
 {
-    public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, bool>
+    public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, Room>
     {
         private readonly IRoomManagementRepository _roomManagementRepository;
         public CreateRoomCommandHandler(IRoomManagementRepository roomManagementRepository)
         {
             _roomManagementRepository = roomManagementRepository;
         }
-        public async Task<bool> Handle(CreateRoomCommand request, CancellationToken cancellationToken)
+        public async Task<Room> Handle(CreateRoomCommand request, CancellationToken cancellationToken)
         {
             var room = new Room { Id = request.Id,
                 Description = request.Description,
@@ -20,13 +20,7 @@ namespace meetspace.room.management.module.Application.CommandHandlers
                 Name = request.RoomName,
                 Location = request.Location };
             // Add the room 
-            var roomSaved = await _roomManagementRepository.CreateRoom(room);
-            if (roomSaved != null)
-            {
-
-                return true;
-            }
-            return false;
+            return await _roomManagementRepository.CreateRoom(room);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace meetspace.room.management.module.Application.CommandHandlers
         }
         public async Task<bool> Handle(CreateRoomBookingCommand request, CancellationToken cancellationToken)
         {
-            var roomBooking = new BookingRoom { Id = Guid.NewGuid().ToString(), EndDate = DateTimeOffset.UtcNow, StartDate = DateTimeOffset.UtcNow, UserEmail = "Random@random.com" };
+            var roomBooking = new BookingRoom { Id = Guid.NewGuid().ToString(), RoomId = request.RoomId, EndDate = request.EndDate, StartDate = request.StartDate, UserEmail = request.UserEmail };
             // Add the room 
             var roomBookingSaved = await _roomBookingManagementRepository.CreateBooking(roomBooking);
             if (roomBookingSaved != null)
